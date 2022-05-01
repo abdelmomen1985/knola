@@ -1,5 +1,6 @@
 node_modules/
 lerna-debug.log
 npm-debug.log
-packages/*/lib
+# Enable importing built code from github directly
+# packages/*/lib
 .idea
