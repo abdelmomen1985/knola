@@ -1,4 +1,4 @@
-# `core`
+# `@knola/core`
 
 > TODO: description
 
