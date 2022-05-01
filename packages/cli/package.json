@@ -1,0 +1,41 @@
+{
+  "name": "@knola/cli",
+  "version": "0.0.5",
+  "private": false,
+  "description": "> TODO: description",
+  "author": "abdelmomen <abdelmomen1985@gmail.com>",
+  "homepage": "https://github.com/abdelmomen1985/knola#readme",
+  "license": "ISC",
+  "main": "bin/index.js",
+  "bin": {
+    "knola": "bin/index.js"
+  },
+  "directories": {
+    "bin": "bin",
+    "test": "__tests__"
+  },
+  "files": [
+    "bin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdelmomen1985/knola.git"
+  },
+  "scripts": {
+    "start": "yarn build && node ./bin/index.js",
+    "build": "tsc",
+    "cli:link": "yarn build && npm link"
+  },
+  "bugs": {
+    "url": "https://github.com/abdelmomen1985/knola/issues"
+  },
+  "dependencies": {
+    "arg": "^5.0.1",
+    "axios": "^0.27.2",
+    "chalk": "4.1.2",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.182"
+  }
+}

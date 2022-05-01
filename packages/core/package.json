@@ -18,5 +18,8 @@
   "scripts": {
     "build": "tsc"
   },
-  "gitHead": "d215239771695f7f212d30a01fba945417a4a7b3"
+  "gitHead": "d215239771695f7f212d30a01fba945417a4a7b3",
+  "dependencies": {
+    "arg": "^5.0.1"
+  }
 }
