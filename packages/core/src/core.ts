@@ -5,5 +5,7 @@ type User = {
 }
 
 export function logUser(user: User) {
-  console.log(`# ${user.id} -> ${user.name} (${user.age? user.age : 'age unknown'})`);
+  // Log User
+  console.log("User:", user);
+  console.log(`${user.id} -> ${user.name} (${user.age? user.age : 'age unknown'})`);
 }

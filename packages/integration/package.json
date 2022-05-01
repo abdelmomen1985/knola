@@ -13,5 +13,6 @@
   "dependencies": {
     "@knola/core": "^0.0.0",
     "ts-node": "^10.7.0"
-  }
+  },
+  "gitHead": "f6223052a7c4e3420170e85273fcff56de13381e"
 }

@@ -1,6 +1,10 @@
 {
-  "name": "root",
+  "name": "knola",
   "private": true,
+  "version": "0.0.2",
+  "scripts": {
+    "publish": "lerna run build && lerna publish"
+  },
   "devDependencies": {
     "@types/node": "^17.0.30",
     "lerna": "^4.0.0",
