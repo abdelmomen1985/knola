@@ -1,6 +1,7 @@
 {
   "name": "@knola/core",
   "version": "0.0.2",
+  "private": false,
   "description": "The core blocks modified",
   "author": "abdelmomen <abdelmomen1985@gmail.com>",
   "homepage": "",
@@ -17,5 +18,5 @@
   "scripts": {
     "build": "tsc"
   },
-  "gitHead": "f6223052a7c4e3420170e85273fcff56de13381e"
+  "gitHead": "b2dd7836c547adcf30d7a322b6bcc1180eb07865"
 }
