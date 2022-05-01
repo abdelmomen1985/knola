@@ -1,5 +1,6 @@
 {
-  "name": "integration",
+  "name": "@knola/integration",
+  "private":false,
   "version": "0.0.3",
   "description": "",
   "main": "index.js",
@@ -14,5 +15,5 @@
     "@knola/core": "^0.0.0",
     "ts-node": "^10.7.0"
   },
-  "gitHead": "b2dd7836c547adcf30d7a322b6bcc1180eb07865"
+  "gitHead": "dbd83a93ad8ef644a3430372ac1c11835c1f872e"
 }
