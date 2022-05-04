@@ -1,7 +1,7 @@
 {
   "name": "@knola/integration",
   "private": false,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@knola/core": "^0.0.1",
+    "@knola/core": "^1.0.0",
     "arg": "^5.0.1",
     "ts-node": "^10.7.0"
   },
