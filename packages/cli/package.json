@@ -11,8 +11,7 @@
     "knola": "bin/index.js"
   },
   "directories": {
-    "bin": "bin",
-    "test": "__tests__"
+    "bin": "bin"
   },
   "files": [
     "bin"

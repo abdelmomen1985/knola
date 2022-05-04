@@ -9,8 +9,7 @@
   "main": "lib/core",
   "typings": "lib/core",
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "lib": "lib"
   },
   "files": [
     "lib"

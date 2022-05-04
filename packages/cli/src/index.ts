@@ -37,6 +37,10 @@ function parseArgsIntoOptions(rawArgs: string[]) {
     return;
   }
   // TODO : Better Naming
+  if(!command) {
+    error("Welcome to knola, no command was provided!");
+    return;
+  }
   const commandData = chained.find({ command }).value();
   if (!commandData) {
     error("Command not found ");

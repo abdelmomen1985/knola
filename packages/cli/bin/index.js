@@ -43,6 +43,10 @@ function parseArgsIntoOptions(rawArgs) {
         return;
     }
     // TODO : Better Naming
+    if (!command) {
+        (0, log_chalk_1.error)("Welcome to knola, no command was provided!");
+        return;
+    }
     const commandData = chained.find({ command }).value();
     if (!commandData) {
         (0, log_chalk_1.error)("Command not found ");

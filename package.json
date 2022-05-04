@@ -2,6 +2,9 @@
   "name": "knola",
   "private": true,
   "version": "0.0.2",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "publish": "lerna run build && lerna publish"
   },

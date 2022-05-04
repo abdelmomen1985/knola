@@ -1,11 +1,10 @@
 # `cli`
 
-> TODO: description
+// TODO: description
 
 ## Usage
 
 ```
-const cli = require('cli');
-
-// TODO: DEMONSTRATE API
+// TODO: Dynamic autokey
+tar -cvzf autokey.tar.gz ~/.config/autokey
 ```
