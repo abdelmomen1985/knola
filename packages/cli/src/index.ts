@@ -2,7 +2,7 @@
 import arg from "arg";
 import axios from "axios";
 import lodash from "lodash";
-import { blue, error, green } from "./log_chalk";
+import { blue, error, green, sysout } from "./loggers";
 
 function parseArgsIntoOptions(rawArgs: string[]) {
   const args = arg(
@@ -27,17 +27,22 @@ function parseArgsIntoOptions(rawArgs: string[]) {
   const chained = lodash.chain(data.commands);
   const [command, ...restArgs] = parseArgsIntoOptions(process.argv);
   if (command === "descripe") {
-
-    const commandData = chained
-      .find({ command: restArgs[0] })
-      .value();
+    const commandData = chained.find({ command: restArgs[0] }).value();
     if (commandData && commandData.description) {
       green(commandData.description);
     }
     return;
   }
+  if (command === "pipe") {
+    sysout("Piped Text");
+    return;
+  }
+  if (command === "open") {
+    sysout("https://manpages.ubuntu.com/");
+    return;
+  }
   // TODO : Better Naming
-  if(!command) {
+  if (!command) {
     error("Welcome to knola, no command was provided!");
     return;
   }

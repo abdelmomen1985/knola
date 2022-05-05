@@ -1,6 +1,7 @@
 node_modules/
 lerna-debug.log
 npm-debug.log
-# Enable importing built code from github directly
-# packages/*/lib
+# Comment next line to enable importing built code from github directly
+packages/*/lib/
+packages/*/bin/
 .idea

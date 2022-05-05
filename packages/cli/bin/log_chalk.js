@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.error = exports.green = exports.red = exports.blue = void 0;
 const chalk_1 = __importDefault(require("chalk"));
-const log = console.log;
+const log = console.error;
 function blue(what) {
     log(chalk_1.default.blue(JSON.stringify(what, null, 4)));
 }

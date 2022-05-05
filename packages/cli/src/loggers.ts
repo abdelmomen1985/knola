@@ -1,5 +1,9 @@
 import chalk from "chalk";
-const log = console.log;
+const log = console.error;
+
+export function sysout(what: string) {
+  process.stdout.write(what);
+}
 
 export function blue(what: unknown) {
   log(chalk.blue(JSON.stringify(what, null, 4)));
