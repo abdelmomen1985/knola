@@ -1,6 +1,6 @@
 {
   "name": "@knola/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "> TODO: description",
   "author": "abdelmomen <abdelmomen1985@gmail.com>",
@@ -39,7 +39,7 @@
     "open": "^8.4.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.182",
-    "@types/js-yaml": "^3.5.2"
+    "@types/js-yaml": "^3.5.2",
+    "@types/lodash": "^4.14.182"
   }
 }
