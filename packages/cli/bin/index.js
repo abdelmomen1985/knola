@@ -13,18 +13,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const arg_1 = __importDefault(require("arg"));
 const axios_1 = __importDefault(require("axios"));
 const lodash_1 = __importDefault(require("lodash"));
 const loggers_1 = require("./loggers");
-function parseArgsIntoOptions(rawArgs) {
-    const args = (0, arg_1.default)({
-        "--help": Boolean,
-    }, {
-        argv: rawArgs.slice(2),
-    });
-    return args._;
-}
+const utils_1 = require("./utils");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const GIST_ID = "739ade69ca698082769c88010ca7927a";
     const FILE_NAME = "mmn.json";
@@ -32,7 +24,7 @@ function parseArgsIntoOptions(rawArgs) {
     const { data } = yield axios_1.default.get(`${GIST_URL}?timestamp=${new Date().getTime()}`);
     (0, loggers_1.green)("* Gist Url => " + GIST_URL);
     const chained = lodash_1.default.chain(data.commands);
-    const [command, ...restArgs] = parseArgsIntoOptions(process.argv);
+    const [command, ...restArgs] = (0, utils_1.parseArgsIntoOptions)(process.argv);
     if (command === "descripe") {
         const commandData = chained.find({ command: restArgs[0] }).value();
         if (commandData && commandData.description) {
@@ -45,7 +37,7 @@ function parseArgsIntoOptions(rawArgs) {
         return;
     }
     if (command === "open") {
-        (0, loggers_1.sysout)("https://manpages.ubuntu.com/");
+        (0, loggers_1.sysout)("https://gist.github.com/abdelmomen1985");
         return;
     }
     // TODO : Better Naming

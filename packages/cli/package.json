@@ -8,7 +8,8 @@
   "license": "ISC",
   "main": "bin/index.js",
   "bin": {
-    "knola": "bin/index.js"
+    "knola": "bin/index.js",
+    "knop": "bin/knop.js"
   },
   "directories": {
     "bin": "bin"
@@ -22,8 +23,8 @@
   },
   "scripts": {
     "start": "yarn build && node ./bin/index.js",
-    "build": "tsc",
-    "cli:link": "yarn build && npm link"
+    "cli:build-w": "tsc -w",
+    "cli:link": "tsc && npm link"
   },
   "bugs": {
     "url": "https://github.com/abdelmomen1985/knola/issues"
@@ -32,9 +33,13 @@
     "arg": "^5.0.1",
     "axios": "^0.27.2",
     "chalk": "4.1.2",
-    "lodash": "^4.17.21"
+    "env-paths": "2.2.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "open": "^8.4.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.182"
+    "@types/lodash": "^4.14.182",
+    "@types/js-yaml": "^3.5.2"
   }
 }

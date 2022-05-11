@@ -1,21 +1,9 @@
 #!/usr/bin/env node
-import arg from "arg";
 import axios from "axios";
 import lodash from "lodash";
 import { blue, error, green, sysout } from "./loggers";
+import { parseArgsIntoOptions } from "./utils";
 
-function parseArgsIntoOptions(rawArgs: string[]) {
-  const args = arg(
-    {
-      "--help": Boolean,
-    },
-    {
-      argv: rawArgs.slice(2),
-    }
-  );
-
-  return args._;
-}
 (async () => {
   const GIST_ID = "739ade69ca698082769c88010ca7927a";
   const FILE_NAME = "mmn.json";
@@ -38,7 +26,7 @@ function parseArgsIntoOptions(rawArgs: string[]) {
     return;
   }
   if (command === "open") {
-    sysout("https://manpages.ubuntu.com/");
+    sysout("https://gist.github.com/abdelmomen1985");
     return;
   }
   // TODO : Better Naming
