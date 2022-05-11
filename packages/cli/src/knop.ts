@@ -3,27 +3,34 @@ import envPaths from "env-paths";
 import { existsSync } from "fs";
 import { mkdir, readFile, writeFile } from "fs/promises";
 import yaml from "js-yaml";
+import open from "open";
 import { parseArgsIntoOptions } from "./utils";
 // YAML CACHE
 const yamlContent = `
-gist: https://gist.github.com/abdelmomen1985
-mist: https://mist.io/abdelmomen1985
+gists: https://gist.github.com/abdelmomen1985
+pkgq: https://www.npmjs.com/search?q=
+npmq: https://www.npmjs.com/search?q=
+repoq: https://github.com/search?type=repositories&q=
+gitq: ttps://github.com/search?q=
+logoq: https://autocomplete.clearbit.com/v1/companies/suggest?query=
+riconq: https://react-icons.github.io/react-icons/search?q=
+wcms: https://whatcms.org/?s=
 `;
 (async () => {
   const paths = envPaths("knola", {
     suffix: undefined,
   });
-  console.log(paths.cache);
+  const knolaChachePath = `${paths.cache}/urls.yaml`;
   // TODO later invalidate cache
   let fileContent;
   try {
-    fileContent = await readFile(`${paths.cache}/mmn.yaml`, "utf8");
+    fileContent = await readFile(knolaChachePath, "utf8");
   } catch (error) {
-    if (!existsSync(`${paths.cache}`)) await mkdir(`${paths.cache}`);
-    await writeFile(`${paths.cache}/mmn.yaml`, yamlContent);
-    fileContent = await readFile(`${paths.cache}/mmn.yaml`, "utf8");
+    if (!existsSync(paths.cache)) await mkdir(paths.cache);
+    await writeFile(knolaChachePath, yamlContent);
+    fileContent = await readFile(knolaChachePath, "utf8");
   }
   const doc = yaml.load(fileContent);
   const [url, ...restArgs] = parseArgsIntoOptions(process.argv);
-  console.log(doc, doc[url] + restArgs);
+  open(doc[url] + restArgs);
 })();
