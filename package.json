@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "publish": "lerna run build && lerna publish",
-    "cli:link": "lerna run build --scope=@knola/cli && lerna run cli:link"
+    "cli:link": "lerna run build --scope=@knola/cli && lerna run cli:link",
+    "cli:clear": "rm -rf /home/momen/.cache"
   },
   "devDependencies": {
     "@types/node": "^17.0.30",

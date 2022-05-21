@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import axios from "axios";
 import lodash from "lodash";
+import kdocs from "./kdocs";
 import { blue, error, green, sysout } from "./loggers";
 import { parseArgsIntoOptions } from "./utils";
 
@@ -27,6 +28,10 @@ import { parseArgsIntoOptions } from "./utils";
   }
   if (command === "open") {
     sysout("https://gist.github.com/abdelmomen1985");
+    return;
+  }
+  if (command === "docs") {
+    await kdocs();
     return;
   }
   // TODO : Better Naming

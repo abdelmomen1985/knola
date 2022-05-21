@@ -15,6 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const lodash_1 = __importDefault(require("lodash"));
+const kdocs_1 = __importDefault(require("./kdocs"));
 const loggers_1 = require("./loggers");
 const utils_1 = require("./utils");
 (() => __awaiter(void 0, void 0, void 0, function* () {
@@ -38,6 +39,10 @@ const utils_1 = require("./utils");
     }
     if (command === "open") {
         (0, loggers_1.sysout)("https://gist.github.com/abdelmomen1985");
+        return;
+    }
+    if (command === "docs") {
+        yield (0, kdocs_1.default)();
         return;
     }
     // TODO : Better Naming
