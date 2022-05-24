@@ -16,6 +16,7 @@ logoq: https://autocomplete.clearbit.com/v1/companies/suggest?query=
 riconq: https://react-icons.github.io/react-icons/search?q=
 wcms: https://whatcms.org/?s=
 tld: https://tld-list.com/tld/
+direc: http://localhost:8055/admin/content/websites
 `;
 (async () => {
   const paths = envPaths("knola", {

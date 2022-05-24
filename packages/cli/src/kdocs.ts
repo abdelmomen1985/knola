@@ -11,6 +11,7 @@ chromeext: https://developer.chrome.com/docs/extensions/
 react: https://reactjs.org/docs/getting-started.html
 vite: https://vitejs.dev/guide/
 storybook: https://storybook.js.org/docs/react/get-started/introduction
+tailwind: https://tailwindcss.com/docs/installation
 `;
 
 export default async function kdocs() {
