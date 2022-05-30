@@ -13,3 +13,5 @@
 tar -cvzf autokey.tar.gz ~/.config/autokey
 
 ```
+
+// TODO: GET yaml dynamically
