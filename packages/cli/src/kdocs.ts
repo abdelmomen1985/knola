@@ -12,6 +12,8 @@ react: https://reactjs.org/docs/getting-started.html
 vite: https://vitejs.dev/guide/
 storybook: https://storybook.js.org/docs/react/get-started/introduction
 tailwind: https://tailwindcss.com/docs/installation
+headless: https://headlessui.dev/
+trpc: https://trpc.io/docs
 `;
 
 export default async function kdocs() {
