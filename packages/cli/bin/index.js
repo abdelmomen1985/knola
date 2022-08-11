@@ -15,6 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const lodash_1 = __importDefault(require("lodash"));
+const open_1 = __importDefault(require("open"));
 const kdocs_1 = __importDefault(require("./kdocs"));
 const loggers_1 = require("./loggers");
 const utils_1 = require("./utils");
@@ -26,23 +27,22 @@ const utils_1 = require("./utils");
     (0, loggers_1.green)("* Gist Url => " + GIST_URL);
     const chained = lodash_1.default.chain(data.commands);
     const [command, ...restArgs] = (0, utils_1.parseArgsIntoOptions)(process.argv);
-    if (command === "descripe") {
+    if (command === "desc") {
         const commandData = chained.find({ command: restArgs[0] }).value();
         if (commandData && commandData.description) {
             (0, loggers_1.green)(commandData.description);
         }
         return;
     }
-    if (command === "pipe") {
-        (0, loggers_1.sysout)("Piped Text");
-        return;
-    }
     if (command === "open") {
         (0, loggers_1.sysout)("https://gist.github.com/abdelmomen1985");
         return;
     }
-    if (command === "docs") {
+    else if (command === "docs") {
         yield (0, kdocs_1.default)();
+        return;
+    }
+    else if (command === "help") {
         return;
     }
     // TODO : Better Naming
@@ -52,7 +52,7 @@ const utils_1 = require("./utils");
     }
     const commandData = chained.find({ command }).value();
     if (!commandData) {
-        (0, loggers_1.error)("Command not found ");
+        (0, loggers_1.error)("Command not found!");
         return;
     }
     (0, loggers_1.green)(commandData);
@@ -78,6 +78,12 @@ const utils_1 = require("./utils");
     }
     if (!actionData) {
         (0, loggers_1.error)("There is no action data");
+    }
+    const argsIndex = actionData[2];
+    let payload = `${actionData[1]}${restArgs[argsIndex] ? restArgs[argsIndex] : ""}`;
+    if (actionData[0] === "open") {
+        (0, open_1.default)(payload);
+        (0, loggers_1.blue)(`${payload} opened`);
     }
 }))();
 //# sourceMappingURL=index.js.map

@@ -14,6 +14,7 @@ storybook: https://storybook.js.org/docs/react/get-started/introduction
 tailwind: https://tailwindcss.com/docs/installation
 headless: https://headlessui.dev/
 trpc: https://trpc.io/docs
+swiper: https://swiperjs.com/get-started
 `;
 
 export default async function kdocs() {

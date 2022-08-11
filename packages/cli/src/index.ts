@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import axios from "axios";
 import lodash from "lodash";
+import open from "open";
 import kdocs from "./kdocs";
 import { blue, error, green, sysout } from "./loggers";
 import { parseArgsIntoOptions } from "./utils";
-
 (async () => {
   const GIST_ID = "739ade69ca698082769c88010ca7927a";
   const FILE_NAME = "mmn.json";
@@ -15,23 +15,21 @@ import { parseArgsIntoOptions } from "./utils";
   green("* Gist Url => " + GIST_URL);
   const chained = lodash.chain(data.commands);
   const [command, ...restArgs] = parseArgsIntoOptions(process.argv);
-  if (command === "descripe") {
+
+  if (command === "desc") {
     const commandData = chained.find({ command: restArgs[0] }).value();
     if (commandData && commandData.description) {
       green(commandData.description);
     }
     return;
   }
-  if (command === "pipe") {
-    sysout("Piped Text");
-    return;
-  }
   if (command === "open") {
     sysout("https://gist.github.com/abdelmomen1985");
     return;
-  }
-  if (command === "docs") {
+  } else if (command === "docs") {
     await kdocs();
+    return;
+  } else if (command === "help") {
     return;
   }
   // TODO : Better Naming
@@ -41,7 +39,7 @@ import { parseArgsIntoOptions } from "./utils";
   }
   const commandData = chained.find({ command }).value();
   if (!commandData) {
-    error("Command not found ");
+    error("Command not found!");
     return;
   }
   green(commandData);
@@ -66,5 +64,13 @@ import { parseArgsIntoOptions } from "./utils";
   }
   if (!actionData) {
     error("There is no action data");
+  }
+  const argsIndex = actionData[2];
+  let payload = `${actionData[1]}${
+    restArgs[argsIndex] ? restArgs[argsIndex] : ""
+  }`;
+  if (actionData[0] === "open") {
+    open(payload);
+    blue(`${payload} opened`);
   }
 })();
