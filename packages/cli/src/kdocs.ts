@@ -7,7 +7,7 @@ import { parseArgsIntoOptions } from "./utils";
 
 const yamlContent = `
 astro: https://docs.astro.build/en/getting-started/
-chromeext: https://developer.chrome.com/docs/extensions/
+extensions: https://developer.chrome.com/docs/extensions/
 react: https://reactjs.org/docs/getting-started.html
 vite: https://vitejs.dev/guide/
 storybook: https://storybook.js.org/docs/react/get-started/introduction

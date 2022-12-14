@@ -44,7 +44,7 @@ import { parseArgsIntoOptions } from "./utils";
   }
   green(commandData);
   let actionData = undefined;
-  // Find if otion is selected
+  // Find if option is selected
   if (commandData.options) {
     // Check default empty option
     if (commandData.options[""]) {

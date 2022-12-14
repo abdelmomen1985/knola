@@ -19,6 +19,7 @@ tld: https://tld-list.com/tld/
 direc: http://localhost:8055/admin/content/websites
 g2: https://www.g2.com/products/
 speedev: https://www.speedtyper.dev/play?mode=private
+idom: https://instantdomainsearch.com/?q=
 `;
 (async () => {
   const paths = envPaths("knola", {

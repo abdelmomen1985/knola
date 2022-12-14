@@ -1,10 +1,10 @@
 # knola
 
-## Publising pkg
+## Publishing pkg
 
 ## CLI Tips
 
-**Open piped link on detached browser proccess**
+**Open piped link on detached browser process**
 
 `knola open | nohup xargs xdg-open`
 
